@@ -32,6 +32,10 @@ EXTRA_OECONF = " \
     --with-driverdate=${DRIVERSDATE} \
     "
 
+do_configure_prepend() {
+        DRIVERSDATE='N/A'
+}
+
 FILES_${PN} += "/usr/lib/enigma2/python/*.so"
 FILES_${PN}-dev += "/usr/lib/enigma2/python/*.la"
 FILES_${PN}-staticdev += "/usr/lib/enigma2/python/*.a"
