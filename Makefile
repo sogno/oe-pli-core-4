@@ -2,6 +2,9 @@
 
 # Adjust according to the number CPU cores to use for parallel build.
 # Default: Number of processors in /proc/cpuinfo, if present, or 1.
+
+MACHINE=sogno8800hd
+
 NR_CPU := $(shell [ -f /proc/cpuinfo ] && grep -c '^processor\s*:' /proc/cpuinfo || echo 1)
 BB_NUMBER_THREADS ?= $(NR_CPU)
 PARALLEL_MAKE ?= -j $(NR_CPU)
