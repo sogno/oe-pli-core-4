@@ -26,7 +26,7 @@ RDEPENDS_${PN} = " \
 	"
 
 RRECOMMENDS_${PN} = " \
-	enigma2-plugin-skins-pli-hd \
+	enigma2-plugin-skins-ruinfinityhd \
 	gst-plugin-subsink \
 	glib-networking \
 	${GST_BASE_RDEPS} \
@@ -152,7 +152,7 @@ PKGV = "2.7+git${GITPKGV}"
 PR = "r49"
 
 ENIGMA2_BRANCH ?= "master"
-SRC_URI = "git://git.code.sf.net/p/openpli/enigma2;protocol=git;branch=${ENIGMA2_BRANCH}"
+SRC_URI = "git://github.com/sogno/stbgui.git;protocol=git;branch=${ENIGMA2_BRANCH}"
 
 S = "${WORKDIR}/git"
 

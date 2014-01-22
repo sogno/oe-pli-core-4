@@ -4,4 +4,4 @@
 
 require openpli-enigma2-image.bb
 
-DEPENDS += "${OPTIONAL_PACKAGES}"
+DEPENDS += "${OPTIONAL_PACKAGES} enigma2-3rdparty-plugins"

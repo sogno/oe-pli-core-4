@@ -34,6 +34,7 @@ EXTERNAL_WIFI_DRIVERS = " \
 	"
 
 ENIGMA2_PLUGINS = " \
+	enigma2-plugin-drivers-usbserial \
 	enigma2-plugin-extensions-audiosync \
 	enigma2-plugin-extensions-autobackup \
 	enigma2-plugin-extensions-cutlisteditor \
@@ -43,8 +44,7 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-extensions-openwebif \
 	enigma2-plugin-extensions-pictureplayer \
 	enigma2-plugin-extensions-ppanel \
-	\
-	enigma2-plugin-pli-softcamsetup \
+	enigma2-plugin-extensions-zaphistorybrowser \
 	\
 	enigma2-plugin-systemplugins-fastscan \
 	enigma2-plugin-systemplugins-hotplug \
@@ -55,25 +55,36 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-systemplugins-softwaremanager \
 	enigma2-plugin-systemplugins-videomode \
 	enigma2-plugin-systemplugins-videotune \
+	enigma2-plugin-systemplugins-devicemanager \
+	\
+	enigma2-plugin-pli-softcamsetup \
 	\
 	${@base_contains("MACHINE_FEATURES", "3dtv", "enigma2-plugin-systemplugins-osd3dsetup" , "", d)} \
 	${@base_contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
 	${@base_contains("MACHINE_FEATURES", "frontprocessor", "enigma2-plugin-systemplugins-frontprocessorupgrade" , "", d)} \
 	${@base_contains("MACHINE_FEATURES", "hdmicec", "enigma2-plugin-systemplugins-hdmicec" , "", d)} \
 	${@base_contains("MACHINE_FEATURES", "osdposition", "enigma2-plugin-systemplugins-osdpositionsetup" , "", d)} \
-	${@base_contains("MACHINE_FEATURES", "wlan", "enigma2-plugin-systemplugins-wirelesslan", "", d)} \
+	${@base_contains("MACHINE_FEATURES", "wifi", "enigma2-plugin-systemplugins-wirelesslan", "", d)} \
 	\
 	${@base_contains('OPENPLI_FEATURES', 'ci', 'enigma2-plugin-systemplugins-commoninterfaceassignment', '', d)} \
 	${@base_contains('OPENPLI_FEATURES', 'dvd', 'enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer', '', d)} \
 	${@base_contains('OPENPLI_FEATURES', 'fan', 'enigma2-plugin-systemplugins-tempfancontrol', '', d)} \
+	enigma2-plugin-extensions-mediaportal \
+	enigma2-plugin-extensions-iptvlistupdater \
+	enigma2-plugin-systemplugins-crossepg \
+	\
+	enigma2-plugin-settings-sogno-admin-astra-192 \
+	\
+	oe-alliance-branding \
 	"
-
+	
 DEPENDS += " \
 	enigma2 \
 	enigma2-pliplugins \
 	enigma2-plugins \
+	oe-alliance-branding \
 	"
-
+	
 ENIGMA2_OPTIONAL = " \
 	channelsettings-enigma2-meta \
 	enigma2-pliplugins \
