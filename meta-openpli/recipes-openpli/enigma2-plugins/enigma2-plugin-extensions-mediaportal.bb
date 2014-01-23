@@ -12,7 +12,7 @@ inherit gitpkgv autotools pythonnative
 SRCREV = "${AUTOREV}"
 PV = "5.0.6+git${SRCPV}"
 PKGV = "5.0.6+git${GITPKGV}"
-PR = "r1"
+PR = "r2"
 
 #SRC_URI = "https://github.com/dhwz/trash/archive/4.9.2.tar.gz file://fix_build.patch"
 SRC_URI = "git://github.com/OpenAR-P/MediaPortal;protocol=git "
@@ -26,7 +26,7 @@ EXTRA_OECONF = " \
 	STAGING_LIBDIR=${STAGING_LIBDIR} \
 	"
 
-FILES_${PN}_append += "${libdir}/enigma2/python/Components/Converter/MPServicePosition.pyo"
+FILES_${PN}_append += "/"
 FILES_${PN}-src_append += "${libdir}/enigma2/python/Components/Converter/MPServicePosition.py"
 
 pkg_postinst_${PN} () {
