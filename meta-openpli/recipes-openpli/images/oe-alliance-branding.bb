@@ -13,7 +13,7 @@ PACKAGES += " ${PN}-src"
 SRCREV = "${AUTOREV}"
 PV = "0.3+git${SRCPV}"
 PKGV = "0.3+git${GITPKGV}"
-PR = "r20"
+PR = "r21"
 
 SRC_URI="git://github.com/oe-alliance/branding-module.git;protocol=git"
 
@@ -46,8 +46,13 @@ do_install_append() {
     install -d ${D}/usr/share/enigma2
     install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/images/boxes
     install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/static
-    install -m 0644 ${S}/BoxBranding/boxes/sogno8800hd.jpg ${D}/usr/share/enigma2/sogno8800hd.jpg
-    ln -sf /usr/share/enigma2/sogno8800hd.jpg ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/images/boxes/sogno8800hd.jpg
+    if [ ${MACHINEBUILD} = "sogno-8800hd" ]; then
+	install -m 0644 ${S}/BoxBranding/boxes/sogno8800hd.jpg ${D}/usr/share/enigma2/sogno8800hd.jpg
+	ln -sf /usr/share/enigma2/sogno8800hd.jpg ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/images/boxes/sogno-8800hd.jpg
+    else
+        install -m 0644 ${S}/BoxBranding/boxes/${MACHINEBUILD}.jpg ${D}/usr/share/enigma2/${MACHINEBUILD}.jpg
+        ln -sf /usr/share/enigma2/${MACHINEBUILD}.jpg ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/images/boxes/${MACHINEBUILD}.jpg
+    fi
     ln -sf /usr/share/enigma2/rc_models ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/static/remotes
 }
 
