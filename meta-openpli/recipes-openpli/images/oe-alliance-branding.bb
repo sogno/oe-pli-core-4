@@ -1,17 +1,19 @@
-DESCRIPTION = "OE-A Branding Lib for OE-A 1.0"
+DESCRIPTION = "OE-A Branding Lib for OE-A 2.0"
 MAINTAINER = "oe-alliance team"
-PACKAGE_ARCH = "${MACHINE_ARCH}"
+PACKAGE_ARCH = "${MACHINE_NAME}"
 
 DEPENDS = "python"
 
 require conf/license/openpli-gplv2.inc
 
-inherit gitpkgv autotools
+inherit gitpkgv autotools pythonnative
+
+PACKAGES += " ${PN}-src"
 
 SRCREV = "${AUTOREV}"
-PV = "0.2+git${SRCPV}"
-PKGV = "0.2+git${GITPKGV}"
-PR = "r${DATETIME}"
+PV = "0.3+git${SRCPV}"
+PKGV = "0.3+git${GITPKGV}"
+PR = "r16"
 
 SRC_URI="git://github.com/oe-alliance/branding-module.git;protocol=git"
 
@@ -33,11 +35,16 @@ EXTRA_OECONF = " \
     "
 
 do_configure_prepend() {
+    if [ "${MACHINE}" = "sogno8800hd" ]; then
+        DRIVERSDATE=`grep "SRCDATE = " ${OE-ALLIANCE_BASE}/meta-oe-alliance/recipes-bsp/sogno/sogno-dvb-modules-${MACHINE}.bb | cut -b 12-19`
+    else
         DRIVERSDATE='N/A'
+    fi
 }
 
-FILES_${PN} += "/usr/lib/enigma2/python/*.so"
-FILES_${PN}-dev += "/usr/lib/enigma2/python/*.la"
-FILES_${PN}-staticdev += "/usr/lib/enigma2/python/*.a"
-FILES_${PN}-dbg += "/usr/lib/enigma2/python/.debug"
+FILES_${PN}-src = "${libdir}/enigma2/python/Components/*.py"
+FILES_${PN} = "${libdir}/enigma2/python/*.so /usr/share ${libdir}/enigma2/python/Components/*.pyo ${libdir}/enigma2/python/Plugins"
+FILES_${PN}-dev += "${libdir}/enigma2/python/*.la"
+FILES_${PN}-staticdev += "${libdir}/enigma2/python/*.a"
+FILES_${PN}-dbg += "${libdir}/enigma2/python/.debug"
 
