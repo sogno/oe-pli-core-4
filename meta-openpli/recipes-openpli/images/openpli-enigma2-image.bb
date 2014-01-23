@@ -69,7 +69,9 @@ ENIGMA2_PLUGINS = " \
 	${@base_contains('OPENPLI_FEATURES', 'ci', 'enigma2-plugin-systemplugins-commoninterfaceassignment', '', d)} \
 	${@base_contains('OPENPLI_FEATURES', 'dvd', 'enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer', '', d)} \
 	${@base_contains('OPENPLI_FEATURES', 'fan', 'enigma2-plugin-systemplugins-tempfancontrol', '', d)} \
-	enigma2-plugin-extensions-mediaportal \
+	\
+	python-html python-compression python-robotparser python-mechanize gst-plugins-good-flv enigma2-plugin-extensions-mediaportal \
+	\
 	enigma2-plugin-extensions-iptvlistupdater \
 	enigma2-plugin-systemplugins-crossepg \
 	\
@@ -105,7 +107,6 @@ ENIGMA2_OPTIONAL = " \
 	dvb-usb-drivers-meta \
 	cdfs cdtextinfo \
 	meta-enigma2-dvdburn \
-	python-mechanize \
 	"
 
 IMAGE_INSTALL += " \
