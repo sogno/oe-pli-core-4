@@ -105,6 +105,7 @@ ENIGMA2_OPTIONAL = " \
 	dvb-usb-drivers-meta \
 	cdfs cdtextinfo \
 	meta-enigma2-dvdburn \
+	python-mechanize \
 	"
 
 IMAGE_INSTALL += " \
