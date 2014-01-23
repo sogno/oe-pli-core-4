@@ -1,6 +1,6 @@
 require conf/license/openpli-gplv2.inc
 
-inherit image
+inherit image packagegroup
 
 IMAGE_INSTALL = " \
 	${ROOTFS_PKGMANAGE} \
