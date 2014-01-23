@@ -4,7 +4,7 @@ SECTION = "extra"
 PRIORITY = "optional"
 RDEPENDS_${PN} = "gst-plugins-bad-rtmp librtmp1 python-textutils udpxy curl"
 
-require conf/license/license-gplv2.inc
+require conf/license/openpli-gplv2.inc
 
 inherit gitpkgv autotools pythonnative
 SRCREV = "${AUTOREV}"
