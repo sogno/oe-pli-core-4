@@ -4,13 +4,15 @@ PRIORITY = "required"
 LICENSE = "CLOSED"
 
 PV = "${KV}+${SRCDATE}"
-PR = "r11"
+PR = "r12"
 
 S = "${WORKDIR}"
 
 INHIBIT_PACKAGE_STRIP = "1"
 
 inherit module
+
+FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf"
 
 do_compile() {
 }
