@@ -13,7 +13,7 @@ PACKAGES += " ${PN}-src"
 SRCREV = "${AUTOREV}"
 PV = "0.3+git${SRCPV}"
 PKGV = "0.3+git${GITPKGV}"
-PR = "r17"
+PR = "r18"
 
 SRC_URI="git://github.com/oe-alliance/branding-module.git;protocol=git"
 
@@ -25,7 +25,7 @@ EXTRA_OECONF = " \
     STAGING_INCDIR=${STAGING_INCDIR} \
     STAGING_LIBDIR=${STAGING_LIBDIR} \
     --with-distro=${DISTRO_NAME} \
-    --with-boxtype=${MACHINEBUILD} \
+    --with-boxtype=${MACHINE_NAME} \
     --with-machineoem="${MACHINE_OEM}" \
     --with-machinebrand="${MACHINE_BRAND}" \
     --with-machinename="${MACHINE_NAME}" \
@@ -46,7 +46,7 @@ do_install_append() {
     install -d ${D}/usr/share/enigma2
     install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/images/boxes
     install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/static
-    if [ ${MACHINEBUILD} = "ventonhdx" ]; then
+    if [ ${MACHINE_NAME} = "ventonhdx" ]; then
         for f in ${S}/BoxBranding/boxes/ini*; do
             filename=$(basename "$f")
             extension="${filename##*.}"
@@ -54,7 +54,7 @@ do_install_append() {
             install -m 0644 $f ${D}/usr/share/enigma2;
             ln -sf /usr/share/enigma2/$filename ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/images/boxes/$filename;
         done
-    elif [ ${MACHINEBUILD} = "et6x00" ]; then
+    elif [ ${MACHINE_NAME} = "et6x00" ]; then
         for f in ${S}/BoxBranding/boxes/et6*; do
             filename=$(basename "$f")
             extension="${filename##*.}"
@@ -63,8 +63,8 @@ do_install_append() {
             ln -sf /usr/share/enigma2/$filename ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/images/boxes/$filename;
         done
     else
-        install -m 0644 ${S}/BoxBranding/boxes/${MACHINEBUILD}.jpg ${D}/usr/share/enigma2/${MACHINEBUILD}.jpg
-        ln -sf /usr/share/enigma2/${MACHINEBUILD}.jpg ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/images/boxes/${MACHINEBUILD}.jpg
+        install -m 0644 ${S}/BoxBranding/boxes/${MACHINE_NAME}.jpg ${D}/usr/share/enigma2/${MACHINE_NAME}.jpg
+        ln -sf /usr/share/enigma2/${MACHINE_NAME}.jpg ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/images/boxes/${MACHINE_NAME}.jpg
     fi
     ln -sf /usr/share/enigma2/rc_models ${D}/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/public/static/remotes
 }
