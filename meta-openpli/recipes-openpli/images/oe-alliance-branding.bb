@@ -1,6 +1,6 @@
 DESCRIPTION = "OE-A Branding Lib for OE-A 2.0"
 MAINTAINER = "oe-alliance team"
-PACKAGE_ARCH = "${MACHINE_NAME}"
+PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 DEPENDS = "python"
 
