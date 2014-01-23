@@ -9,12 +9,12 @@ require conf/license/openpli-gplv2.inc
 
 inherit gitpkgv autotools pythonnative
 
-SRCREV = "c5fe703a13269b4ac9817f191d1bcaccf0f51442"
+SRCREV = "${AUTOREV}"
 PV = "4.9.3+git${SRCPV}"
 PKGV = "4.9.3+git${GITPKGV}"
 PR = "r1"
 
-SRC_URI = "git://github.com/dhwz/trash;protocol=git file://fix_build.patch"
+SRC_URI = "git://github.com/OpenAR-P/MediaPortal.git;protocol=git file://fix_build.patch"
 
 S = "${WORKDIR}/git"
 
