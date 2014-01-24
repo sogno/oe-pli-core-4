@@ -1,6 +1,6 @@
 DESCRIPTION = "mgcamd ${PV} softcam"
 
-PR = "r11"
+PR = "r12"
 
 SRC_URI = "http://pluginvalley.kr/sources/mgcamd${PV}.zip"
 
@@ -34,5 +34,5 @@ do_install() {
 FILES_${PN} += "/usr/keys"
 FILES_${PN} += "/usr/lib"
 
-SRC_URI[md5sum] = "68b51f73092c617d07a44fa154936dcb"
-SRC_URI[sha256sum] = "d7b7845e21de475c116e42c525effd3cc4952552233fa661e4087053a2ff2939"
+SRC_URI[md5sum] = "45b966308036f19b71a8a7e27031738b"
+SRC_URI[sha256sum] = "a02a1fff48d44b792add20ac06c04e4fe9e03ab18e34fea5a5ea96dcb286b1a0"
