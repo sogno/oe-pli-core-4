@@ -1,8 +1,8 @@
 DESCRIPTION = "mgcamd ${PV} softcam"
 
-PR = "r10"
+PR = "r11"
 
-SRC_URI = "http://whitebox.host.sk/bcm/mirrors/mgcamd${PV}.zip"
+SRC_URI = "http://pluginvalley.kr/sources/mgcamd${PV}.zip"
 
 CAMNAME = "mgcamd"
 
