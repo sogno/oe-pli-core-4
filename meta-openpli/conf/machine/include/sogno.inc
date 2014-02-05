@@ -1,5 +1,6 @@
 include conf/machine/include/openpli.inc
 
+BRAND_OEM = "sogno"
 MACHINE_BRAND = "Sogno"
 
 DVBPROVIDER = "kernel"
