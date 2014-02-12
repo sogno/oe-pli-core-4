@@ -2,7 +2,7 @@ DESCRIPTION="Sogno mac checker - flasher"
 LICENSE = "Gpl2"
 require conf/license/openpli-gplv2.inc
 
-PR = "r3"
+PR = "r4"
 PV = "0.1"
 
 BRANCH = "master"
