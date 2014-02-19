@@ -24,6 +24,7 @@ GLIBC_EXTRA_OECONF = "--with-tls --with-__thread"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-sogno"
 
+
 KERNEL_IMAGETYPE = "vmlinux"
 KERNEL_OUTPUT = "${KERNEL_IMAGETYPE}"
 KERNEL_CONSOLE = "ttyS0,115200n8"
@@ -40,8 +41,8 @@ MACHINE_FEATURES += "3dtv alsa hdmicec externalwifi switchoff wifi 3dtvpli boots
 
 BOOTLOGO_FILENAME = "splash.bin"
 
-PREFERRED_PROVIDER_virtual/blindscan-dvbs = "vuplus-blindscan-utils"
-PREFERRED_PROVIDER_virtual/blindscan-dvbc = "vuplus-blindscan-utils"
+PREFERRED_PROVIDER_virtual/blindscan-dvbc = "vuplus-blindscan-utils-vuuno"
+PREFERRED_PROVIDER_virtual/blindscan-dvbs = "vuplus-blindscan-utils-vuuno"
 
 require conf/machine/include/tune-mips32.inc
 
