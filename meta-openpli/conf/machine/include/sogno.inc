@@ -41,8 +41,8 @@ MACHINE_FEATURES += "3dtv alsa hdmicec externalwifi switchoff wifi 3dtvpli boots
 
 BOOTLOGO_FILENAME = "splash.bin"
 
-PREFERRED_PROVIDER_virtual/blindscan-dvbc = "vuplus-blindscan-utils-vuuno"
-PREFERRED_PROVIDER_virtual/blindscan-dvbs = "vuplus-blindscan-utils-vuuno"
+PREFERRED_PROVIDER_virtual/blindscan-dvbc = "sogno-blindscan-utils"
+PREFERRED_PROVIDER_virtual/blindscan-dvbs = "sogno-blindscan-utils"
 
 require conf/machine/include/tune-mips32.inc
 
