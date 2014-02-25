@@ -8,7 +8,8 @@ RREPLACES_{$PN} = "vuplus-opera-browser-util"
 RCONFLICTS_{$PN} = "vuplus-opera-browser-util"
 PACKAGES = "${PN}"
 
-SRC_DATE = "20131224_0"
+#SRC_DATE = "20131224_0"
+SRC_DATE = "20130820_0"
 SRC_URI = ""
 SRC_FILE = "opera-hbbtv_${SRC_DATE}.tar.gz"
 
@@ -45,9 +46,6 @@ do_install() {
 
 	install -d ${D}/usr/share
 	cp -avR ${S}/dfb/usr/share/* ${D}/usr/share/
-
-	install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/HbbTV
-	cp -avR ${S}/plugin/* ${D}/usr/lib/enigma2/python/Plugins/Extensions/HbbTV
 }
 
 do_package_qa() {

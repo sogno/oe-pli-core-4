@@ -80,6 +80,8 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-settings-sogno-admin-astra-192 \
 	\
 	oe-alliance-branding \
+	\
+	python-subprocess vuplus-opera-browser enigma2-plugin-extensions-browser \
 	"
 	
 DEPENDS += " \
